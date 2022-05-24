@@ -1,0 +1,31 @@
+<%- include ("partials/header.ejs") %>
+<div class = "ui text main container">
+	<div class = "ui huge header" id = "check">
+		RestFul blog App
+	</div>
+	<div class = "ui top attached segment">
+		<div class = "ui divided items">
+					<% for(var i=0;i<data.length;i++) {%>
+					<div class = "item">
+						<div class = "image">
+							<img src ="<%=data[i].image %>">
+						</div>
+						<div class = "content">
+							<a class ="header" href = "/blogs/<%=data[i]._id%>"> <%=data[i].title%></a>
+							<div class ="meta">
+								<span><%=data[i].created.toDateString()%></span>
+							</div>
+							<div class = "description">
+								<%=data[i].body.substring(0,20)%>.........
+							</div>
+							<div class ="extra">
+								<a href ="/blogs/<%=data[i]._id%>" class="ui basic violet button"> Read More  <i class = "right chevron icon"></i></a>
+							</div>
+						</div>
+					</div>
+					<% } %>
+		</div>
+	</div>
+</div>
+
+<%- include ("partials/footer.ejs")%>

@@ -1,0 +1,25 @@
+<%- include ("partials/header.ejs")%>
+<div class="ui container main segment">
+	<div class="ui huge header">
+		Edit <%=data.title%>
+	</div>
+	<form action = "/blogs/<%=data._id%>?_method=PUT" method = "POST" class="ui form">
+		<div class="field">
+			<label>Title</label>
+			<input type = "text" placeholder="title here" name ="blog[title]" value ="<%=data.title%>"></inpu>>
+		</div>
+		<div class="field">
+			<label>Image</label>
+			<input type = "text" placeholder="url of image" name = "blog[image]" value = "<%=data.image%>">
+		</div>
+		<div class="field">
+			<label>Content</label>
+			<textarea name="blog[body]" placeholder="Content goes here..."><%=data.body%></textarea>
+		</div>
+		<div class="field">
+			<input type="submit" class="ui violet basic button">
+		</div>
+
+	</form>
+</div>
+<%- include ("partials/footer.ejs")%>
